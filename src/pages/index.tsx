@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,13 +18,15 @@ export default function Home() {
       <main>
         <div className="relative">
           <div className="mx-32">
-            <Image src="/images/bgSec04.jpg" width="2000" height="10" className="mx-auto mt-20" alt="" />
+            <Image src="/images/bgSec04.jpg" width="2000" height="10" className="mx-auto mt-20 animate-fade-in-bottom" alt="" />
           </div>
-          <p className="absolute top-28 right-16 text-7xl font-sans">My <br />Works</p>
+          <p className="absolute top-28 right-16 text-7xl font-sans animate-fade-in-right">My <br />Works</p>
         </div>
         <div className="flex mt-36">
           <Image src="/images/imgProject.jpg" width="400" height="10" className="flex-auto" alt="" />
-          <p className="flex-auto">ポートフォリオ集</p>
+          <Link href="/portfolio" className="flex-auto">
+            ポートフォリオ集
+          </Link>
         </div>
       </main>
     </>
