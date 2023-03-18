@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="flex-auto pl-4 w-2/4">
               <p className="text-4xl font-sans">Portfolio</p>
-              <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-500 ease-in group-hover:w-full group-hover:opacity-100"></div>
+              <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-300 ease-in group-hover:w-full group-hover:opacity-100"></div>
               <br />
               <p>ポートフォリオ集。<br />今までに作成したアプリやwebページなどを閲覧できます。</p>
             </div>
