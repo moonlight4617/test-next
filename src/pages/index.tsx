@@ -23,10 +23,21 @@ export default function Home() {
           <p className="absolute top-28 right-16 text-7xl font-sans animate-fade-in-right">My <br />Works</p>
         </div>
         <div className="flex mt-36">
-          <Image src="/images/imgProject.jpg" width="400" height="10" className="flex-auto" alt="" />
-          <Link href="/portfolio" className="flex-auto">
-            ポートフォリオ集
-          </Link>
+          <div className="w-2/4">
+            <Image src="/images/imgProject.jpg" width="1000" height="10" className="flex-auto animate-fade-in-left" alt="" />
+          </div>
+          <div className="flex-auto pl-4 w-2/4">
+            <Link href="/portfolio" className="group">
+              <p className="text-4xl font-sans animate-fade-in-left">Portfolio</p>
+              <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-500 ease-in group-hover:w-full group-hover:opacity-100"></div>
+            </Link>
+            <br />
+            <p>ポートフォリオ集。<br />今までに作成したアプリやwebページなどを閲覧できます。
+            </p>
+            <div className="group">
+              {/* <div className="w-1/4 h-1 opacity-0 bg-indigo-500 transition-all origin-left duration-600 ease-in hover:w-full hover:opacity-100"></div> */}
+            </div>
+          </div>
         </div>
       </main>
     </>
