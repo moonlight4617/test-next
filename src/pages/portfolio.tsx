@@ -4,8 +4,8 @@ import Link from 'next/link';
 export default function Portfolio() {
   return (
     <div className="mx-16">
-      <p className="text-7xl font-sans ml-10 mt-10">Portfolio</p>
-      <Link href="/">トップページへ戻る</Link>
+      <p className="text-7xl font-sans mt-10">Portfolio</p>
+      <Link href="/" className="right-1">トップページへ戻る</Link>
       <div className="flex mt-8">
         <Image src="/images/photo01.jpg" width="500" height="10" alt="" className="flex" />
         <div className="ml-12">
