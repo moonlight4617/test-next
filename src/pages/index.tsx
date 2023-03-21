@@ -29,12 +29,30 @@ export default function Home() {
             </div>
             <div className="flex-auto pl-4 w-2/4">
               <p className="text-4xl font-sans">Portfolio</p>
-              <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-300 ease-in group-hover:w-full group-hover:opacity-100"></div>
+              <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-300 ease-in group-hover:w-36 group-hover:opacity-100"></div>
               <br />
               <p>ポートフォリオ集。<br />今までに作成したアプリやwebページなどを閲覧できます。</p>
             </div>
           </div>
         </Link>
+        <div className="mt-16 flex ">
+          <div className="w-6/12">
+            <Link href="/profile" className="mt-48 flex flex-auto group">
+              <div className="overflow-hidden">
+                <Image src="/images/photo04.jpg" alt="" width="350" height="10" className="flex-initial group-hover:scale-110 duration-300" />
+              </div>
+              <div className="ml-2">
+                <p className="text-4xl font-sans flex-none">About Me</p>
+                <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-300 ease-in group-hover:w-full group-hover:opacity-100"></div>
+                <br />
+                <p className="">経歴や趣味</p>
+              </div>
+            </Link>
+          </div>
+          <div className="ml-auto">
+            <Image src="/images/photo03.jpg" alt="" width="250" height="10" className="mt-12" />
+          </div>
+        </div>
       </main>
     </>
   )
