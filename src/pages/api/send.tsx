@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey("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"); //SendGridのAPIキー
+    sgMail.setApiKey(""); //SendGridのAPIキー
 
     const msgToUser = {
       to: req.body.email,
