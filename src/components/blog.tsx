@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { useBlogs } from '../features/hooks/useBlogs'
 
 type Props = {}
 
 export const Blog = (props: Props) => {
+  useBlogs();
   return (
     <section className="mt-36">
       <div className="w-[80%] h-[32rem] bg-white ml-auto relative">

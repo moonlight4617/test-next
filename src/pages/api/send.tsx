@@ -3,19 +3,27 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey("SG.xxx"); //SendGridのAPIキー
+    sgMail.setApiKey("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"); //SendGridのAPIキー
 
-    const msg = {
+    const msgToUser = {
       to: req.body.email,
       from: 'support@example.com',
       subject: 'お問合せありがとうございました。',
       text: 'お問合せを受け付けました。回答をお待ちください。' + req.body.message,
       html: 'お問合せを受け付けました。回答をお待ちください。' + req.body.message,
     };
+    const msgToHost = {
+      to: "moonlight4_6_17@yahoo.co.jp",
+      from: req.body.email,
+      subject: 'PFページからお問合せがありました',
+      text: 'お問合せ内容: ' + req.body.message,
+      html: 'お問合せ内容: ' + req.body.message,
+    };
 
     (async () => {
       try {
-        await sgMail.send(msg);
+        const result = await sgMail.send(msgToUser);
+        await sgMail.send(msgToHost);
       } catch (error: any) {
         console.error(error);
         if (error.response) {
@@ -25,5 +33,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     })();
   }
 
-  res.status(200)
+  res.status(200).json({ message: 'test' });
 }

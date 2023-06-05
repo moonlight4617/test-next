@@ -1,8 +1,10 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 type Props = {}
 
 export const Contact = (props: Props) => {
+  const router = useRouter()
   const registerUser = async (event: any) => {
     event.preventDefault()
 
@@ -16,7 +18,12 @@ export const Contact = (props: Props) => {
       },
       method: 'POST'
     })
-    const result = await res.json()
+
+    console.log(res)
+    if (res.ok !== true)
+      router.replace('/error')
+
+    router.replace('/thanks')
   }
 
   return (
@@ -47,7 +54,7 @@ export const Contact = (props: Props) => {
               </div>
             </div>
             <div className="p-2 w-full">
-              <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">送信</button>
+              <button className="flex mx-auto text-white bg-[#5F5F5F] border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">送信</button>
             </div>
           </div>
         </div>
