@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import { Title } from '../parts/title'
+
 type Props = {}
 
 export const Header = (props: Props) => {
@@ -34,10 +36,7 @@ export const Header = (props: Props) => {
           <li className="border-b"><a href="#contact" className="hover:bg-gray-300 block px-2 py-2 rounded">Contact Me</a></li>
         </ul>
       </nav>
-      <div className="mt-20 ml-28">
-        <p>ポートフォリオ集</p>
-        <p className="text-4xl">Ryoji's Works</p>
-      </div>
+      <Title />
     </div>
 
   )

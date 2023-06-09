@@ -12,8 +12,8 @@ export const Works = (props: Props) => {
     usePortfolio().then((data) => {
       const div = data.map((portfolio: any, index: number) => (
         <div className="flex mt-28 animate-fade-in-left text-gray-600" key={index}>
-          <div className="w-1/2 overflow-hidden" id="portfolio">
-            <Image src="/images/photo12.jpg" width="400" height="400" className="ml-auto mr-4 flex-auto" alt="portfolio1" />
+          <div className="w-1/2 overflow-hidden mr-4">
+            <Image src="/images/photo12.jpg" width="400" height="400" className="ml-auto flex-auto" alt="portfolio1" />
           </div>
           <div className="flex-auto pl-1 w-1/2">
             <p className="font-medium title-font text-gray-900 text-3xl">{portfolio.name}</p>
@@ -31,7 +31,7 @@ export const Works = (props: Props) => {
   }, [])
   return (
     <>
-      <div className="mt-32 mx-44">
+      <div className="mt-32 mx-44" id="portfolio">
         <p className="text-center text-7xl">Portfolio</p>
         <p className="mt-8 text-center text-md">今まで作成してきたアプリなどの作品を紹介します。</p>
         {/* <Link href="/portfolio" className="group"> */}

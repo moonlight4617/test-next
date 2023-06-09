@@ -27,9 +27,9 @@ export const Contact = (props: Props) => {
   }
 
   return (
-    <section className="text-gray-600 body-font relative mt-16">
+    <section className="text-gray-600 body-font relative mt-16" id="contact">
       <form className="container px-5 py-28 mx-auto" onSubmit={registerUser}>
-        <div className="flex flex-col text-center w-full mb-12" id="contact">
+        <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl md:text-7xl font-medium mb-4 text-gray-900">Contact Me</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">お問合せに関してはこちらからお願いします。</p>
         </div>

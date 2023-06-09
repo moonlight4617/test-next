@@ -1,17 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Title } from '../components/parts/title'
+
 export default function profile() {
   return (
     <div className="bg-[#f2f2e9] w-full h-full">
-      <div className="container w-2/3 mx-auto pt-8">
-        <div className="w-36 ml-auto group">
+        <div className="w-36 ml-auto group mr-8 pt-4">
           <Link href="/">
             <p>トップページへ戻る</p>
             <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-300 ease-in group-hover:w-full group-hover:opacity-100">
             </div>
           </Link>
         </div>
+        <Title />
+      <div className="container w-2/3 mx-auto pt-8">
         <div className="flex justify-center absolute left-[50%]">
           <p className="vertical-rl text-2xl">田邊涼二</p>
           <p className="vertical-rl ml-2 text-[#999999]">ryoji tanabe</p>
