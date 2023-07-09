@@ -5,9 +5,9 @@ import { Title } from '../parts/title'
 
 type Props = {}
 
-export const Header = (props: Props) => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const handleMenuOpen = () => {
+export const Header = () => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const handleMenuOpen = (): void => {
     setOpenMenu(!openMenu);
   }
 
