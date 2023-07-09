@@ -1,9 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-type Props = {};
-
-export const Contact = (props: Props) => {
+export const Contact = () => {
   const router = useRouter();
   const registerUser = async (event: any) => {
     event.preventDefault();

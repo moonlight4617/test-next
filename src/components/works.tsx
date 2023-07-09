@@ -4,11 +4,18 @@ import React, { useEffect, useState } from "react";
 
 import { usePortfolio } from "../features/hooks/usePortfolio";
 
-type Props = {};
+type PortfolioType = {
+  url: string;
+  image: string;
+  name: string;
+  summary: string;
+  description: string;
+  github: string;
+};
 
-export const Works = (props: Props) => {
-  const [portfolioArray, setPortfolioArray] = useState();
-  const [portfolioFlag, setPortfolioFlag] = useState(false);
+export const Works = () => {
+  const [portfolioArray, setPortfolioArray] = useState<any>();
+  const [portfolioFlag, setPortfolioFlag] = useState<boolean>(false);
   useEffect(() => {
     usePortfolio().then((data) => {
       if (!data) {
@@ -25,7 +32,7 @@ export const Works = (props: Props) => {
       // console.log(
       //   `localhost:1337/${data[0].image.data.attributes.formats.small.url}`
       // );
-      const div = data.map((portfolio: any, index: number) => (
+      const div = data.map((portfolio: PortfolioType, index: number) => (
         <div
           className="flex mt-24 animate-fade-in-left text-gray-600"
           key={index}
@@ -82,7 +89,7 @@ export const Works = (props: Props) => {
               <tr>
                 <td>github:</td>
                 <td>
-                  <a href={portfolio.github}>{portfolio.github}</a>
+                  <a href={portfolio.github} target="_blank">{portfolio.github}</a>
                 </td>
               </tr>
               <tr>

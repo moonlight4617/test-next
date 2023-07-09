@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-type Props = {};
-
-export const Hero = (props: Props) => {
+export const Hero = () => {
   return (
     <div className="mr-auto w-[88%] relative">
       <Image
@@ -11,16 +9,24 @@ export const Hero = (props: Props) => {
         width="2000"
         height="10"
         className="mx-auto mt-4 animate-fade-in-bottom"
-        layout="responsive"
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto"
+        }}
         alt="hero.jpg"
       />
       <div className="absolute top-[70%] w-[105%] left-[3rem]">
         <Image
           src="/images/hero-title.png"
-          width="2000"
+          width="1000"
           height="800"
           className="animate-fade-in-right"
-          layout="responsive"
+          sizes="100vw"
+          style={{
+            width: "100%",
+            height: "auto"
+          }}
           alt="hero-title.png"
         />
       </div>

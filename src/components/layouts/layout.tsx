@@ -9,9 +9,7 @@ import { Profile } from "../profile";
 import { Contact } from "../contact";
 import { Blog } from "../blog";
 
-type Props = {};
-
-export const Layout = (props: Props) => {
+export const Layout = () => {
   return (
     <div className="bg-[#f2f2e9] overflow-x-hidden">
       <Header />

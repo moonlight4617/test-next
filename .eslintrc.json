@@ -6,6 +6,6 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
-    "airbnb-base",
+    "airbnb-base"
   ]
 }
