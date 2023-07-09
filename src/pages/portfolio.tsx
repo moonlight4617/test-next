@@ -15,13 +15,24 @@ export default function Portfolio() {
           key={index}
         >
           <div className="w-1/2 overflow-hidden mr-4">
-            <Image
-              src="/images/photo12.jpg"
-              width="400"
-              height="400"
-              className="ml-auto flex-auto"
-              alt="portfolio1"
-            />
+            {portfolio.image ? (
+              <Image
+                src={portfolio.image.data.attributes.formats.small.url}
+                width="400"
+                height="400"
+                className="ml-auto flex-auto"
+                alt={`portfoilo-image${index}`}
+              />
+            ) : (
+              // <Image
+              //   src="/images/photo12.jpg"
+              //   width="400"
+              //   height="400"
+              //   className="ml-auto flex-auto"
+              //   alt={`portfoilo-image${index}`}
+              // />
+              <p>テスト</p>
+            )}
           </div>
           <div className="flex-auto pl-1 w-1/2">
             <p className="font-medium title-font text-gray-900 text-3xl">

@@ -5,7 +5,7 @@ type Props = {};
 
 export const Title = (props: Props) => {
   return (
-    <div className="mt-20 ml-28">
+    <div className="mt-20 ml-28 animate-fade-in-left">
       <p>ポートフォリオ集</p>
       <p className="text-4xl">Ryoji's Works</p>
     </div>
