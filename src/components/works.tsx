@@ -22,9 +22,9 @@ export const Works = (props: Props) => {
         setPortfolioArray(noPortfolio);
         return;
       }
-      console.log(
-        `localhost:1337/${data[0].image.data.attributes.formats.small.url}`
-      );
+      // console.log(
+      //   `localhost:1337/${data[0].image.data.attributes.formats.small.url}`
+      // );
       const div = data.map((portfolio: any, index: number) => (
         <div
           className="flex mt-24 animate-fade-in-left text-gray-600"
@@ -32,13 +32,14 @@ export const Works = (props: Props) => {
         >
           <div className="w-1/2 overflow-hidden mr-4">
             {portfolio.image ? (
-              <Image
-                src={`http://localhost:1337${portfolio.image.data.attributes.formats.small.url}`}
-                width="400"
-                height="400"
-                className="ml-auto flex-auto"
-                alt={`portfoilo-image${index}`}
-              />
+              // <Image
+              //   src={`http://localhost:1337${portfolio.image.data.attributes.formats.small.url}`}
+              //   width="400"
+              //   height="400"
+              //   className="ml-auto flex-auto"
+              //   alt={`portfoilo-image${index}`}
+              // />
+              <p>テスト</p>
             ) : (
               // <Image
               //   src="/images/photo12.jpg"
@@ -47,7 +48,7 @@ export const Works = (props: Props) => {
               //   className="ml-auto flex-auto"
               //   alt={`portfoilo-image${index}`}
               // />
-              <p>テスト</p>
+              <p>noimageテスト</p>
             )}
 
             {/* <Image

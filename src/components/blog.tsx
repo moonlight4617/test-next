@@ -8,7 +8,7 @@ type Props = {};
 
 export const Blog = (props: Props) => {
   const blogData = useBlogs();
-  const formDate = (date) => {
+  const formDate = (date: any) => {
     const newDate = new Date(date);
     const formedDate =
       newDate.getFullYear() +
