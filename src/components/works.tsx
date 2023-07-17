@@ -26,6 +26,12 @@ type PortfolioType = {
   github: string;
 };
 
+type ImageProps = {
+  src?: string;
+  width?: number;
+  quality?: number;
+}
+
 export const Works = () => {
   const [portfolioArray, setPortfolioArray] = useState<any>();
   const [portfolioFlag, setPortfolioFlag] = useState<boolean>(false);
@@ -42,7 +48,7 @@ export const Works = () => {
         setPortfolioArray(noPortfolio);
         return;
       }
-      const myLoader = ({ src, width, quality }): string => {
+      const myLoader = ({ src, width, quality }: ImageProps): string => {
         return `http://localhost:1337${src}?w=${width}&q=${quality || 75}`
       }
       const div = data.map((portfolio: PortfolioType, index: number) => (
