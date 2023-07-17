@@ -14,16 +14,16 @@ export default function profile() {
       </div>
       <Title />
       <div className="container w-2/3 mx-auto pt-24">
-        <div className="flex justify-center absolute left-[50%]">
+        <div className="flex justify-center absolute left-[50%] animate-fade-in-bottom z-10">
           <p className="vertical-rl text-2xl">田邊涼二</p>
           <p className="vertical-rl ml-2 text-[#999999]">ryoji tanabe</p>
         </div>
         <Image
           src="/images/profile.JPG"
-          width="500"
-          height="10"
-          alt=""
-          className="mx-auto mt-20"
+          width="450"
+          height="400"
+          alt="profile.JPG"
+          className="mx-auto mt-16 animate-fade-in-bottom"
         />
         <div className="flex mt-40">
           <p className="vertical-rl text-2xl">自己紹介</p>

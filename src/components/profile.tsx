@@ -5,9 +5,9 @@ import React from 'react'
 export const Profile = () => {
   return (
     <section className="mt-56 text-gray-600 relative pb-60" id="profile">
-      <div className="overflow-hidden">
+      <div className="overflow-hidden relative">
         <Image
-          src="/images/photo14.jpg"
+          src="/images/about-bg.jpg"
           alt="profile"
           width="800"
           height="200"
@@ -16,9 +16,10 @@ export const Profile = () => {
             height: 'auto',
           }}
           className="group-hover:scale-110 duration-300"
+          priority
         />
       </div>
-      <div className="w-[40rem] h-[26rem] bg-[#f2f2e9] absolute top-[16rem] right-0 px-24 pt-20">
+      <div className="md:w-1/2 h-[26rem] bg-[#f2f2e9] absolute top-[8rem] md:top-[30%] right-0 px-8 lg:px-24 pt-20 lg:top-[40%]">
         {/* <div className="w-[36rem] h-[26rem] bg-[#f2f2e9] absolute top-[16rem] left-[40rem] px-24 pt-20"> */}
         <p className="text-center text-7xl">About Me</p>
         <p className="mt-8">飲食からエンジニアになった珍しいキャリアを歩んでいます。</p>

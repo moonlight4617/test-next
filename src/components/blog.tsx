@@ -31,12 +31,12 @@ export const Blog = () => {
           {blogData ? (
             blogData.map((data: Array<BlogDatas>, index: number) => (
               <div
-                className="w-60 h-60 bg-[#e6e6cf] mr-20 rounded-2xl p-8"
+                className="w-60 h-60 bg-[#e6e6cf] mr-20 rounded-2xl p-8 flex flex-col"
                 key={index}
               >
-                <h2 className="text-2xl">{data[1].title || "No Title"}</h2>
+                <h2 className="text-2xl flex-1">{data[1].title || "No Title"}</h2>
                 {/* <p className="">{data[1].summary}</p> */}
-                <p className="mt-4">{formDate(data[1].published) || "No Date"}</p>
+                <p className="mt-4 ml-auto">{formDate(data[1].published) || "No Date"}</p>
               </div>
             ))
           ) : (
@@ -46,7 +46,7 @@ export const Blog = () => {
           )}
         </div>
         {blogData ? (
-          <div className="w-[8rem] mt-16 ml-auto mr-8 group">
+          <div className="w-[10rem] mt-16 ml-auto mr-8 group">
             <a href={publicRuntimeConfig.blogUrl} target="_blank">ブログサイト(外部)へ</a>
             <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-200 ease-in group-hover:w-full group-hover:opacity-100"></div>
           </div>
