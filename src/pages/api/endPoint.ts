@@ -14,7 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // "https://blog.hatena.ne.jp/fluid_27/fluid-27.hatenablog.com/atom/entry",
       {
         auth: {
-          // username: "fluid_27",
           username: process.env.HATENA_AUTH_USER || "",
           password: process.env.HATENA_AUTH_PATH || ""
         },
