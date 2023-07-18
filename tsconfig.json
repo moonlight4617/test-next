@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
     "lib": [
+      "es2020",
       "dom",
       "dom.iterable",
       "esnext"
@@ -26,9 +27,7 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/features/hooks/useProxy.js"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"

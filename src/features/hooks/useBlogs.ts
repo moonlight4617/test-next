@@ -26,9 +26,10 @@ export function useBlogs() {
               const parsedData = xp.parse(data)
               // console.log(parsedData.feed)
               let parsedDataList = []
-              for (let i = 0; i < 3; i++) {
-                // console.log(parsedData.feed.entry[i])
-                parsedDataList.push(parsedData.feed.entry[i])
+              for (let i = 0; i < 10; i++) {
+                if (parsedData.feed.entry[i].title.indexOf('下書き') === -1) {
+                  parsedDataList.push(parsedData.feed.entry[i])
+                }
               }
               // console.log(typeof(parsedDataList[0]))
               const dataList = Object.entries(parsedDataList)
