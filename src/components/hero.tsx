@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <div className="mr-auto w-[88%] relative">
       <Image
-        src="/images/hero-bg.JPG"
+        src="/images/hero-bg.jpg"
         width="2000"
         height="10"
         className="mx-auto mt-4 animate-fade-in-bottom"
