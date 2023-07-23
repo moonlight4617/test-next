@@ -3,9 +3,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 import { usePortfolio } from "../features/hooks/usePortfolio";
-// import { PortfolioData } from "../components/parts/portfolioData"
-
-// const { portfolioArray, portfolioFlag } = PortfolioData();
 
 type PortfolioType = {
   url: string;
@@ -119,7 +116,6 @@ export const Works = () => {
       <p className="md:mt-8 text-center md:text-md mt-4">
         今まで作成してきたアプリなどの作品を紹介します。
       </p>
-      {/* <Link href="/portfolio" className="group"> */}
       {portfolioArray}
       {portfolioFlag ? (
         <div className="mt-12 group w-[9rem] ml-auto mr-8">
