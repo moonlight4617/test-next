@@ -6,13 +6,6 @@ const { XMLParser } = require("fast-xml-parser");
 
 export function useBlogs() {
   const [postsList, setPostsList] = useState<any>([]);
-  // console.log(typeof window)
-
-  // const xmlParse = async (data) => {
-  //   // return await new XMLparser().parseFromString(data); 
-  //   const result = await new XMLparser().parseFromString(data); 
-  //   console.log(result)
-  // }
 
   useEffect(() => {
     const xp = new XMLParser();
@@ -35,7 +28,6 @@ export function useBlogs() {
               const dataList = Object.entries(parsedDataList)
               setPostsList(dataList)
               // console.log({...dataList})
-              // setPostsList(objList)
               // console.log([obj.entry.title, obj.entry.published])
             })
             .catch(err => console.log(err));

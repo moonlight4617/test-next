@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useBlogs } from "../features/hooks/useBlogs";
 import getConfig from "next/config";
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -18,7 +18,6 @@ type BlogDatas = {
 
 export const Blog = () => {
   const blogData = useBlogs();
-  const [slidesPerView, setSlidesPerView] = useState(1);
   const formDate = (date: string): string => {
     const newDate = new Date(date);
     const formedDate: string =
@@ -29,34 +28,6 @@ export const Blog = () => {
       newDate.getDate();
     return formedDate;
   };
-  // const handleBreakpoint = () => {
-  //   const screenWidth = window.innerWidth;
-  //   if (screenWidth >= 1580) {
-  //     setSlidesPerView(5);
-  //   } else if (screenWidth >= 1150) {
-  //     setSlidesPerView(4);
-  //   } else if (screenWidth >= 860) {
-  //     setSlidesPerView(3);
-  //   } else if (screenWidth >= 580) {
-  //     setSlidesPerView(2);
-  //   } else {
-  //     setSlidesPerView(1);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (typeof window == undefined) return
-  //   // ウィンドウのリサイズイベントにリスナーを追加
-  //   window.addEventListener('resize', handleBreakpoint);
-  //   // 初回レンダリング時にもブレークポイントの処理を行う
-  //   handleBreakpoint();
-
-  //   // リサイズイベントのリスナーを解除
-  //   return () => {
-  //     window.removeEventListener('resize', handleBreakpoint);
-  //   };
-  // }, []);
-  // console.log(blogData);
   const swiperAtt = {
     breakpoints: {
       580: {

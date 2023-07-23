@@ -38,7 +38,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     usePortfolio().then((data) => {
-      const div = data.map((portfolio: any, index: number) => (
+      const div = data.map((portfolio: PortfolioType, index: number) => (
         <div
           className="flex mt-24 text-gray-600  md:w-4/5 lg:w-3/5 mx-auto"
           key={index}
@@ -63,8 +63,6 @@ export default function Portfolio() {
               />
             )}
           </div>
-
-
 
           <div className="flex-auto pl-1 w-1/2">
             <p className="font-medium title-font text-gray-900 text-3xl">
@@ -113,7 +111,6 @@ export default function Portfolio() {
           </Link>
         </div>
         <Title />
-
         <div className="mt-24">
           <div className="relative mb-48 animate-fade-in-bottom">
             <Image
@@ -131,12 +128,10 @@ export default function Portfolio() {
               Portfolio
             </h1>
           </div>
-
           <div className="flex justify-center mb-24">
             <p className="vertical-rl text-2xl">作品のご紹介</p>
             <p className="vertical-rl ml-2 text-[#999999]">My works</p>
           </div>
-
           {portfolioArray}
         </div>
       </div>
