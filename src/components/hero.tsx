@@ -17,7 +17,7 @@ export const Hero = () => {
         alt="hero.jpg"
         priority
       />
-      <div className="absolute top-[70%] w-[105%] left-[3rem]">
+      <div className="absolute top-[70%] w-[105%] md:left-[3rem]">
         <Image
           src="/images/hero-title.png"
           width="1000"

@@ -25,19 +25,19 @@ export const Contact = () => {
   };
 
   return (
-    <section className="text-gray-600 body-font relative mt-16" id="contact">
-      <form className="container px-5 py-28 mx-auto" onSubmit={registerUser}>
+    <section className="text-gray-600 body-font md:mt-16" id="contact">
+      <form className="px-5 py-28 mx-auto" onSubmit={registerUser}>
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl md:text-7xl font-medium mb-4 text-gray-900">
+          <h1 className="md:text-7xl font-medium mb-4 text-gray-900 text-2xl">
             Contact Me
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
             お問合せに関してはこちらからお願いします。
           </p>
         </div>
-        <div className="lg:w-1/2 md:w-2/3 mx-auto">
+        <div className="lg:w-1/2 md:w-2/3 mx-auto w-full">
           <div className="flex flex-wrap -m-2">
-            <div className="relative p-2 w-full">
+            <div className="p-2 w-full">
               <label
                 htmlFor="name"
                 className="leading-7 text-sm text-gray-600"
@@ -52,7 +52,7 @@ export const Contact = () => {
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
-            <div className="relative p-2 w-full">
+            <div className="p-2 w-full">
               <label
                 htmlFor="email"
                 className="leading-7 text-sm text-gray-600"
@@ -68,7 +68,7 @@ export const Contact = () => {
               />
             </div>
             <div className="p-2 w-full">
-              <div className="relative">
+              <div className="">
                 <label
                   htmlFor="message"
                   className="leading-7 text-sm text-gray-600"

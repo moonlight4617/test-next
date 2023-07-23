@@ -12,7 +12,7 @@ export const Header = () => {
   }
 
   return (
-    <div className="relative pb-24">
+    <div className="relative md:pb-24">
       <button onClick={handleMenuOpen} className="w-full text-right pr-12 mt-4 z-10">
         {openMenu ?
           <span className="material-symbols-outlined z-20 fixed ease-linear duration-1000">close</span>
