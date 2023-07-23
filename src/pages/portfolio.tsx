@@ -117,7 +117,7 @@ export default function Portfolio() {
         <div className="mt-24">
           <div className="relative mb-48 animate-fade-in-bottom">
             <Image
-              src="/images/portfolio-bg.JPG"
+              src="/images/portfolio-bg.jpg"
               width="1000"
               height="300"
               alt="portfolio-bg.JPG"
