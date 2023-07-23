@@ -60,10 +60,6 @@ export const Blog = () => {
   const swiperAtt = {
     breakpoints: {
       580: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      790: {
         slidesPerView: 3,
         spaceBetween: 30
       },
@@ -72,7 +68,8 @@ export const Blog = () => {
         spaceBetween: 40
       }
     },
-    slidesPerView: 1,
+    slidesPerView: 2,
+    spaceBetween: 40,
     pagination: {
       clickable: true,
       el: '#pagination',
@@ -90,31 +87,17 @@ export const Blog = () => {
       <>
         <Swiper
           {...swiperAtt}
-          className="w-[110%] !ml-[-8%]"
-        // slidesPerView={slidesPerView}
-        // slidesPerView={3}
-        // pagination={{
-        //   clickable: true,
-        //   el: '#pagination',
-        // }}
-        // navigation={{
-        //   prevEl: "#button_prev",
-        //   nextEl: "#button_next"
-        // }}
-        // loop={true}
-        // modules={[Pagination, Navigation]}
-        // className="w-[110%] !ml-[-8%]"
+          className="w-[120%] !md:ml-[-8%] !ml-[-18%]"
         >
           {blogData.map((data: Array<BlogDatas>, index: number) => (
             <SwiperSlide
               className="flex"
               key={index}
             >
-              <div className="w-56 h-56 bg-[#e6e6cf] mr-20 rounded-2xl p-8 flex flex-col shadow-gray-400 shadow-md mb-2"
+              <div className="md:w-56 md:h-56 w-36 h-36 bg-[#e6e6cf] rounded-2xl md:p-8 p-4 flex flex-col shadow-gray-400 shadow-md mb-2"
               >
-                <h2 className="text-[1.3rem] flex-1 text-ellipsis overflow-hidden">{data[1].title || "No Title"}</h2>
-                {/* <p className="">{data[1].summary}</p> */}
-                <p className="mt-4 ml-auto">{formDate(data[1].published) || "No Date"}</p>
+                <h2 className="md:text-[1.3rem] flex-1 text-ellipsis overflow-hidden">{data[1].title || "No Title"}</h2>
+                <p className="mt-4 ml-auto md:text-md text-sm">{formDate(data[1].published) || "No Date"}</p>
               </div>
             </SwiperSlide>
           ))}
@@ -127,10 +110,10 @@ export const Blog = () => {
   }
 
   return (
-    <section className="mt-36">
-      <div className="w-[80%] h-[32rem] bg-white ml-auto relative">
-        <p className="text-7xl mt-[-2.5rem] ml-16 absolute">Blog</p>
-        <div className="pt-36 p-4">
+    <section className="md:mt-36 mt-16">
+      <div className="w-[80%] md:h-[32rem] h-[24rem] bg-white ml-auto relative">
+        <p className="md:text-7xl md:mt-[-2.5rem] md:ml-16 absolute text-3xl mt-[-1rem] ml-8">Blog</p>
+        <div className="mt:pt-36 p-4 pt-28">
           {!blogData || blogData.length < 1 ? (
             <p className="mx-auto mt-20">
               現在表示できるブログ記事はありません

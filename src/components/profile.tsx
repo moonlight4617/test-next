@@ -4,25 +4,25 @@ import React from 'react'
 
 export const Profile = () => {
   return (
-    <section className="mt-56 text-gray-600 relative pb-60" id="profile">
-      <div className="overflow-hidden relative">
+    <section className="md:mt-56 text-gray-600 relative md:pb-60 mt-32" id="profile">
+      <div className="relative md:w-[70%] md:ml-0 w-[88%] ml-auto">
         <Image
           src="/images/about-bg.jpg"
           alt="profile"
           width="800"
           height="200"
           style={{
-            width: '70vw',
+            width: 'auto',
             height: 'auto',
           }}
           className="group-hover:scale-110 duration-300"
           priority
         />
       </div>
-      <div className="md:w-1/2 h-[26rem] bg-[#f2f2e9] absolute top-[8rem] md:top-[30%] right-0 px-8 lg:px-24 pt-20 lg:top-[40%]">
+      <div className="md:w-1/2 h-[26rem] bg-[#f2f2e9] md:absolute md:top-[30%] right-0 px-8 lg:px-24 md:pt-20 lg:top-[40%] pt-8">
         {/* <div className="w-[36rem] h-[26rem] bg-[#f2f2e9] absolute top-[16rem] left-[40rem] px-24 pt-20"> */}
-        <p className="text-center text-7xl">About Me</p>
-        <p className="mt-8">飲食からエンジニアになった珍しいキャリアを歩んでいます。</p>
+        <p className="md:text-center md:text-7xl text-2xl">About Me</p>
+        <p className="md:mt-8 mt-2">飲食からエンジニアになった珍しいキャリアを歩んでいます。</p>
         <p>以前は個人の飲食店からスタートして、飲食業に従事してきました。<br />エンジニアとなった今では、以前に自分が勤めていたような個人経営の店舗などを支援できるようなサービスを開発・広めていくことが目標です。</p>
         <div className="mt-8 group w-[9rem] ml-auto">
           <Link href="/profile" className="">
