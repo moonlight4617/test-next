@@ -19,7 +19,7 @@ export default function profile() {
           <p className="vertical-rl ml-2 text-[#999999]">ryoji tanabe</p>
         </div>
         <Image
-          src="/images/profile.jpg"
+          src="/images/profile1.jpg"
           width="450"
           height="400"
           alt="profile.JPG"
