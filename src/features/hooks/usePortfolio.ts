@@ -8,7 +8,8 @@ export async function usePortfolio() {
       .then((data) => {
         // console.log(data)
         const portfolioArray = data.data.data.map((portfolio: any, index: number) => {
-          return index < 3 ? { ...portfolio.attributes } : null
+          return { ...portfolio.attributes }
+          // return index < 3 ? { ...portfolio.attributes } : null
         });
         // console.log(...portfolioArray);
         return portfolioArray
