@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "strapi": "cd backend && npm run develop",
-    "build": "next build",
+    "build": "next build && cd backend && npm run develop",
     "start": "next start",
     "lint": "next lint"
   },
