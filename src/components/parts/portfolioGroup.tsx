@@ -8,7 +8,7 @@ import { usePortfolio } from "../../features/hooks/usePortfolio";
 type PortfolioType = {
   attributes: {
     url: string;
-    image: {
+    image?: {
       data: {
         attributes: {
           formats: {
@@ -20,9 +20,22 @@ type PortfolioType = {
       }
     };
     name: string;
-    summary: string;
-    description: string;
-    github: string;
+    summary?: string;
+    description?: string;
+    github?: string;
+    technologies?: {
+      data?: Array<{
+        attributes: {
+          name: string;
+        }
+      }>
+    }
+  }
+}
+
+type TechType = {
+  attributes: {
+    name: string;
   }
 }
 
@@ -33,18 +46,19 @@ type ImageProps = {
 }
 type Props = {
   portNumLimit: number;
+  isAbleLinks: boolean;
 }
 
-export const PortfolioGroup = ({ portNumLimit }: Props) => {
+export const PortfolioGroup = ({ portNumLimit, isAbleLinks }: Props) => {
   const { publicRuntimeConfig } = getConfig();
   const myLoader = ({ src, width, quality }: ImageProps): string => {
     return `${publicRuntimeConfig.strapi}${src}?w=${width}&q=${quality || 75}`
   }
-  const data = usePortfolio();
+  const data: PortfolioType[] | null = usePortfolio();
 
   return (
     <>
-      {data.length < 1 ? (
+      {!data || data.length < 1 ? (
         <div className="text-center mt-20">
           <h3 className="font-bold">
             現在表示できるポートフォリオはありません
@@ -60,14 +74,16 @@ export const PortfolioGroup = ({ portNumLimit }: Props) => {
                 >
                   <div className="md:w-1/2 overflow-hidden md:mr-4 mx-8">
                     {portfolio.attributes.image && portfolio.attributes.image.data ? (
-                      <Image
-                        loader={myLoader}
-                        src={portfolio.attributes.image.data.attributes.formats.small.url}
-                        width="400"
-                        height="400"
-                        className="ml-auto flex-auto"
-                        alt={`portfoilo-image${index}`}
-                      />
+                      <div className='overflow-hidden'>
+                        <Image
+                          loader={myLoader}
+                          src={portfolio.attributes.image.data.attributes.formats.small.url}
+                          width="400"
+                          height="400"
+                          className="mx-auto md:ml-auto flex-auto group-hover:scale-110 duration-500"
+                          alt={`portfoilo-image${index}`}
+                        />
+                      </div>
                     ) : (
                       <Image
                         src="/images/noimage.png"
@@ -90,20 +106,35 @@ export const PortfolioGroup = ({ portNumLimit }: Props) => {
                           <td>詳細:</td>
                           <td className="">{portfolio.attributes.description}</td>
                         </tr>
+                        {isAbleLinks ? (
+                          <>
+                            <tr>
+                              <td>URL:</td>
+                              <td>
+                                <a href={portfolio.attributes.url}>{portfolio.attributes.url}</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>github:</td>
+                              <td>
+                                <a href={portfolio.attributes.github} target="_blank">{portfolio.attributes.github}</a>
+                              </td>
+                            </tr>
+                          </>
+                        ) : (<></>)}
                         <tr>
-                          <td>URL:</td>
+                          <td className="w-20">使用技術:</td>
                           <td>
-                            <a href={portfolio.attributes.url}>{portfolio.attributes.url}</a>
+                            {portfolio.attributes.technologies?.data ? (
+                              <div className="w-full flex flex-wrap">
+                                {portfolio.attributes.technologies?.data.map((tech) => (
+                                  <span key={tech.attributes.name} className="flex-none m-1 bg-lime-700 rounded-xl px-2 text-white">{tech.attributes.name}</span>
+                                ))}
+                              </div>
+                            ) : (
+                              <></>
+                            )}
                           </td>
-                        </tr>
-                        <tr>
-                          <td>github:</td>
-                          <td>
-                            <a href={portfolio.attributes.github} target="_blank">{portfolio.attributes.github}</a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="w-20">使用言語:</td>
                           <td></td>
                         </tr>
                       </tbody>
@@ -114,12 +145,12 @@ export const PortfolioGroup = ({ portNumLimit }: Props) => {
             </div>
           ))
           }
-          <div className="mt-12 group w-[9rem] ml-auto mr-8">
+          {/* <div className="mt-12 group w-[9rem] ml-auto mr-8">
             <Link href="/portfolio">
-              <p className="">ポートフォリオ一覧</p>
+              <p className="group">ポートフォリオ一覧</p>
               <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-200 ease-in group-hover:w-full group-hover:opacity-100"></div>
             </Link>
-          </div>
+          </div> */}
         </>
       )
       }

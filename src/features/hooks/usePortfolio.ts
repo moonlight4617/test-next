@@ -1,8 +1,5 @@
-// import axios from 'axios';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-type Props = {}
 
 export function usePortfolio() {
   const [portfolio, setPortfolio] = useState<any>([]);

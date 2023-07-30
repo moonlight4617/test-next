@@ -32,10 +32,14 @@ export const Blog = () => {
     breakpoints: {
       580: {
         slidesPerView: 3,
-        spaceBetween: 30
+        spaceBetween: 40
       },
       1080: {
         slidesPerView: 4,
+        spaceBetween: 40
+      },
+      1400: {
+        slidesPerView: 5,
         spaceBetween: 40
       }
     },
@@ -58,14 +62,16 @@ export const Blog = () => {
       <>
         <Swiper
           {...swiperAtt}
-          className="w-[120%] !md:ml-[-8%] !ml-[-18%]"
+          // className="w-[120%] !md:ml-[-8%] !ml-[-18%]"
+          className="w-full"
         >
           {blogData.map((data: Array<BlogDatas>, index: number) => (
             <SwiperSlide
               className="flex"
               key={index}
             >
-              <div className="md:w-56 md:h-56 w-36 h-36 bg-[#e6e6cf] rounded-2xl md:p-8 p-4 flex flex-col shadow-gray-400 shadow-md mb-2"
+              {/* <div className="md:w-56 md:h-56 w-36 h-36 bg-[#e6e6cf] rounded-2xl md:p-8 p-4 flex flex-col shadow-gray-400 shadow-md mb-2" */}
+              <div className="md:w-56 md:h-56 w-36 h-36 bg-[#CCD3A9] rounded-2xl md:p-8 p-4 flex flex-col shadow-gray-400 shadow-md mb-2"
               >
                 <h2 className="md:text-[1.3rem] flex-1 text-ellipsis overflow-hidden">{data[1].title || "No Title"}</h2>
                 <p className="mt-4 ml-auto md:text-md text-sm">{formDate(data[1].published) || "No Date"}</p>
@@ -82,7 +88,8 @@ export const Blog = () => {
 
   return (
     <section className="md:mt-36 mt-16">
-      <div className="w-[80%] md:h-[32rem] h-[24rem] bg-white ml-auto relative">
+      {/* <div className="w-[80%] md:h-[32rem] h-[24rem] bg-white ml-auto relative"> */}
+      <div className="w-full md:h-[32rem] h-[24rem] bg-white ml-auto relative">
         <p className="md:text-7xl md:mt-[-2.5rem] md:ml-16 absolute text-3xl mt-[-1rem] ml-8">Blog</p>
         <div className="mt:pt-36 p-4 pt-28">
           {!blogData || blogData.length < 1 ? (
@@ -94,7 +101,7 @@ export const Blog = () => {
           )}
         </div>
         {blogData ? (
-          <div className="w-[10rem] mt-16 ml-auto mr-8 group">
+          <div className="w-[12rem] mt-16 ml-auto mr-8 group text-lg text-right">
             <a href={publicRuntimeConfig.blogUrl} target="_blank">ブログサイト(外部)へ</a>
             <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-200 ease-in group-hover:w-full group-hover:opacity-100"></div>
           </div>
