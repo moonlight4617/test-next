@@ -3,18 +3,13 @@ const nextConfig = {
   // reactStrictMode: true,
   images: {
     domains: ['localhost'],
+    // domains: ['strapi-production-da65.up.railway.app'],
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/blog/',
-  //       // destination: 'https://blog.hatena.ne.jp/fluid_27/fluid-27.hatenablog.com/atom/entry',
-  //     },
-  //   ]
-  // },
   publicRuntimeConfig: {
-    hatenaApi: 'https://blog.hatena.ne.jp/fluid_27/fluid-27.hatenablog.com/atom/entry',
+    hatenaApi: process.env.HATENA_API,
     blogUrl: 'https://fluid-27.hatenablog.com/',
+    strapi: process.env.STRAPI,
+    strapiApi: process.env.STRAPI_API
   }
 }
 
