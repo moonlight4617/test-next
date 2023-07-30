@@ -17,7 +17,6 @@ export const Works = () => {
           <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-200 ease-in group-hover:w-full group-hover:opacity-100"></div>
         </div>
       </Link>
-
     </div >
   );
 };
