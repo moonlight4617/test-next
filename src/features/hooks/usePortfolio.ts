@@ -1,27 +1,27 @@
+// import axios from 'axios';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 type Props = {}
 
-export async function usePortfolio() {
-  try {
-    const result = await axios.get("http://localhost:1337/api/portfolios?populate=*")
-      .then((data) => {
-        // console.log(data)
-        const portfolioArray = data.data.data.map((portfolio: any, index: number) => {
-          return { ...portfolio.attributes }
-          // return index < 3 ? { ...portfolio.attributes } : null
-        });
-        // console.log(...portfolioArray);
-        return portfolioArray
-      })
-      .catch(err => {
-        console.log("err:", err);
-      });
-    return (
-      result
-    )
-  }
-  catch {
-    return false
-  }
+export function usePortfolio() {
+  const [portfolio, setPortfolio] = useState<any>([]);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const fetchPortfolio = async () => {
+        try {
+          const response = await axios.get('/api/getStrapiData')
+          const data = response.data;
+          // console.log(data.data);
+          setPortfolio(data.data)
+        } catch {
+          setPortfolio(null)
+          console.log('error発生しました')
+        }
+      };
+      fetchPortfolio();
+    }
+  }, [typeof window])
+
+  return portfolio
 }
