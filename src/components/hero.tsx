@@ -3,7 +3,7 @@ import React from "react";
 
 export const Hero = () => {
   return (
-    <div className="mr-auto w-[88%] relative">
+    <div className="mr-auto w-[88%] relative md:pt-24">
       <Image
         src="/images/hero-bg.jpg"
         width="2000"
@@ -17,7 +17,7 @@ export const Hero = () => {
         alt="hero.jpg"
         priority
       />
-      <div className="absolute top-[70%] w-[105%] md:left-[3rem]">
+      <div className="absolute top-[80%] w-[105%] md:left-[3rem]">
         <Image
           src="/images/hero-title.png"
           width="1000"

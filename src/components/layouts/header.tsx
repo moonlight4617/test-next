@@ -1,28 +1,24 @@
-import Image from "next/image";
 import { useState } from "react";
+import { Link as Scroll } from 'react-scroll';
 
 import { Title } from '../parts/title'
 
-type Props = {}
+type Props = {
+  handleMenuOpen: () => void;
+  openMenu: boolean;
+  closeModal: () => void;
+}
 
-export const Header = () => {
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const handleMenuOpen = (): void => {
-    setOpenMenu(!openMenu);
-  }
+export const Header = ({ handleMenuOpen, openMenu, closeModal }: Props) => {
 
   return (
-    <div className="relative md:pb-24">
+    <div className="relative">
       <button onClick={handleMenuOpen} className="w-full text-right pr-12 mt-4 z-10">
         {openMenu ?
-          <span className="material-symbols-outlined z-20 fixed ease-linear duration-1000">close</span>
+          <span className="material-symbols-outlined z-20 fixed ease-linear duration-2000">close</span>
           : <span className="material-symbols-outlined z-20 fixed ease-linear duration-1000">menu</span>
         }
       </button>
-      {/* <div className="mx-32">
-        <Image src="/images/bgSec04.jpg" width="2000" height="10" className="mx-auto mt-4 animate-fade-in-bottom" alt="" />
-      </div>
-      <p className="absolute top-28 right-16 text-7xl font-sans animate-fade-in-right">My <br />Works</p> */}
       <nav
         className={
           openMenu
@@ -31,12 +27,46 @@ export const Header = () => {
         }
       >
         <ul className="mt-6">
-          <li className="border-b"><a href="#portfolio" className="hover:bg-gray-300 block px-2 py-2 rounded">Portfolio</a></li>
-          <li className="border-b"><a href="#profile" className="hover:bg-gray-300 block px-2 py-2 rounded">About Me</a></li>
-          <li className="border-b"><a href="#contact" className="hover:bg-gray-300 block px-2 py-2 rounded">Contact Me</a></li>
+          <Scroll
+            to="portfolio"
+            smooth={true}
+            duration={600}
+            className="hover:bg-gray-300 block px-2 py-2 rounded"
+            onClick={handleMenuOpen}
+          >
+            Portfolio
+          </Scroll>
+          <Scroll
+            to="profile"
+            smooth={true}
+            duration={600}
+            className="hover:bg-gray-300 block px-2 py-2 rounded"
+            onClick={handleMenuOpen}
+          >
+            About Me
+          </Scroll>
+          <Scroll
+            to="blog"
+            smooth={true}
+            duration={600}
+            className="hover:bg-gray-300 block px-2 py-2 rounded"
+            offset={-150}
+            onClick={handleMenuOpen}
+          >
+            Blog
+          </Scroll>
+          <Scroll
+            to="contact"
+            smooth={true}
+            duration={600}
+            className="hover:bg-gray-300 block px-2 py-2 rounded"
+            onClick={handleMenuOpen}
+          >
+            Contact Me
+          </Scroll>
         </ul>
       </nav>
-      <Title />
+      <Title closeModal={closeModal} />
     </div>
 
   )
