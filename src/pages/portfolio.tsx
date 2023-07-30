@@ -36,7 +36,7 @@ export default function Portfolio() {
             <p className="vertical-rl text-2xl">作品のご紹介</p>
             <p className="vertical-rl ml-2 text-[#999999]">My works</p>
           </div>
-          <PortfolioGroup portNumLimit={0} />
+          <PortfolioGroup portNumLimit={0} isAbleLinks={true} />
         </div>
       </div>
     </div>

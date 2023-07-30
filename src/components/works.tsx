@@ -1,9 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import getConfig from "next/config";
+import Link from "next/link";
 
-import { usePortfolio } from "../features/hooks/usePortfolio";
 import { PortfolioGroup } from "./parts/portfolioGroup";
 
 export const Works = () => {
@@ -13,7 +10,14 @@ export const Works = () => {
       <p className="md:mt-8 text-center md:text-md mt-4">
         今まで作成してきたアプリなどの作品を紹介します。
       </p>
-      <PortfolioGroup portNumLimit={1} />
+      <Link href="/portfolio" className="group">
+        <PortfolioGroup portNumLimit={1} isAbleLinks={false} />
+        <div className="mt-12 group w-[9rem] ml-auto mr-8">
+          <p className="group">ポートフォリオ一覧</p>
+          <div className="border-b border-black w-0 opacity-0 transition-all origin-left duration-200 ease-in group-hover:w-full group-hover:opacity-100"></div>
+        </div>
+      </Link>
+
     </div >
   );
 };
