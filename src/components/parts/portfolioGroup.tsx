@@ -80,7 +80,7 @@ export const PortfolioGroup = ({ portNumLimit, isAbleLinks }: Props) => {
                           src={portfolio.attributes.image.data.attributes.formats.small.url}
                           width="400"
                           height="400"
-                          className="mx-auto md:ml-auto flex-auto group-hover:scale-110 duration-500"
+                          className="mx-auto flex-auto group-hover:scale-110 duration-500"
                           alt={`portfoilo-image${index}`}
                         />
                       </div>
@@ -89,7 +89,7 @@ export const PortfolioGroup = ({ portNumLimit, isAbleLinks }: Props) => {
                         src="/images/noimage.png"
                         width="400"
                         height="400"
-                        className="ml-auto flex-auto"
+                        className="mx-auto flex-auto"
                         alt="no-image"
                       />
                     )}
