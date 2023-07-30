@@ -1,7 +1,7 @@
 import React from "react";
 
 type Props = {
-  closeModal: () => void;
+  closeModal?: () => void;
 };
 
 export const Title = ({ closeModal }: Props) => {
