@@ -84,7 +84,7 @@ export const Contact = () => {
               </div>
             </div>
             <div className="p-2 w-full">
-              <button className="flex mx-auto text-white bg-[#5F5F5F] border-0 py-2 px-8 focus:outline-none hover:bg-[#7dad6a] rounded text-lg">
+              <button className="flex mx-auto text-white bg-[#5F5F5F] border-0 py-2 px-8 focus:outline-none hover:bg-lime-700 rounded text-lg">
                 送信
               </button>
             </div>

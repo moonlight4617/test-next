@@ -80,7 +80,7 @@ export const PortfolioGroup = ({ portNumLimit, isAbleLinks }: Props) => {
                           src={portfolio.attributes.image.data.attributes.formats.small.url}
                           width="400"
                           height="400"
-                          className="ml-auto flex-auto group-hover:scale-110 duration-500"
+                          className="mx-auto md:ml-auto flex-auto group-hover:scale-110 duration-500"
                           alt={`portfoilo-image${index}`}
                         />
                       </div>
@@ -126,9 +126,9 @@ export const PortfolioGroup = ({ portNumLimit, isAbleLinks }: Props) => {
                           <td className="w-20">使用技術:</td>
                           <td>
                             {portfolio.attributes.technologies?.data ? (
-                              <div className="w-full flex">
+                              <div className="w-full flex flex-wrap">
                                 {portfolio.attributes.technologies?.data.map((tech) => (
-                                  <span key={tech.attributes.name} className="flex-none mx-1 bg-lime-700 rounded-xl px-2 text-white">{tech.attributes.name}</span>
+                                  <span key={tech.attributes.name} className="flex-none m-1 bg-lime-700 rounded-xl px-2 text-white">{tech.attributes.name}</span>
                                 ))}
                               </div>
                             ) : (
