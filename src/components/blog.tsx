@@ -64,6 +64,7 @@ export const Blog = () => {
           {...swiperAtt}
           // className="w-[120%] !md:ml-[-8%] !ml-[-18%]"
           className="w-full"
+          id="blog"
         >
           {blogData.map((data: Array<BlogDatas>, index: number) => (
             <SwiperSlide

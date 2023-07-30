@@ -10,10 +10,19 @@ import { Contact } from "../contact";
 import { Blog } from "../blog";
 
 export const Layout = () => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const handleMenuOpen = (): void => {
+    setOpenMenu(!openMenu);
+  }
+
+  const closeModal = (): void => {
+    setOpenMenu(false)
+  }
+
   return (
     <div className="bg-[#f2f2e9] overflow-x-hidden">
-      <Header />
-      <main>
+      <Header handleMenuOpen={handleMenuOpen} openMenu={openMenu} closeModal={closeModal} />
+      <main onClick={closeModal}>
         <Hero />
         <Works />
         <Profile />
